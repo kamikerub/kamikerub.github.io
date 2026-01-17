@@ -8,6 +8,71 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/feather-icons"></script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* trilho do gato = a linha do footer */
+    .cat-track {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 12px;
+      /* alinha com a linha */
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .cat-img {
+      position: relative;
+      height: 48px;
+      opacity: 0.85;
+      animation: catWalk 7s linear infinite;
+    }
+
+    @media (max-width: 768px) {
+      @keyframes catWalk {
+        from {
+          transform: translateX(-80px);
+        }
+
+        to {
+          transform: translateX(95vw);
+          /* sai mais cedo */
+        }
+      }
+    }
+
+    @media (min-width: 769px) {
+      @keyframes catWalk {
+        from {
+          transform: translateX(-80px);
+        }
+
+        to {
+          transform: translateX(85vw);
+        }
+      }
+    }
+
+    /* mobile: menor, mas ainda rápido */
+    @media (max-width: 768px) {
+      .cat-img {
+        height: 48px;
+        animation-duration: 9s;
+      }
+    }
+
+    /* mobile: gato menor e mais lento */
+    @media (max-width: 768px) {
+      .cat-img {
+        height: 48px;
+        animation-duration: 6s;
+      }
+    }
+  </style>
 </head>
 
 <body class="bg-neutral-950 text-neutral-100 antialiased">
@@ -148,8 +213,20 @@
         </div>
       </section>
 
-      <footer class="mt-20 border-t border-neutral-800 pt-6 text-neutral-400">
-        Professional profile intended for recruiters and job opportunities.
+      <footer class="relative mt-20 pt-12 overflow-hidden">
+
+        <!-- linha do footer -->
+        <div class="h-px bg-neutral-800 w-full"></div>
+
+        <!-- gato andando sobre a linha -->
+        <div class="cat-track">
+          <img src="cat_walking.gif" alt="Walking cat" class="cat-img" />
+        </div>
+
+        <p class="text-neutral-400 text-center mt-6">
+          Professional profile intended for recruiters and job opportunities.
+        </p>
+
       </footer>
 
     </section>
