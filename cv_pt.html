@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kamila Mesquita — Professional Profile</title>
+  <title>Kamila Mesquita — Perfil Profissional</title>
+  <meta name="description" content="Perfil profissional de Kamila Mesquita." />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/feather-icons"></script>
@@ -77,18 +78,29 @@
 
 <body class="bg-neutral-950 text-neutral-100 antialiased">
 
+  <!-- LANGUAGE SWITCH -->
   <div class="fixed top-5 right-5 z-50">
-    <a href="cv_pt.html"
+    <a href="cv_en.html"
       class="flex items-center gap-2 text-sm px-3 py-1 rounded-full border border-neutral-700 hover:bg-neutral-800 transition">
 
-      <!-- PORTUGAL FLAG -->
-      <svg width="18" height="12" viewBox="0 0 30 20" aria-label="Português" class="rounded-sm">
-        <rect width="12" height="20" fill="#006600" />
-        <rect x="12" width="18" height="20" fill="#FF0000" />
-        <circle cx="12" cy="10" r="4" fill="#FFCC00" />
+      <!-- UK FLAG -->
+      <svg width="18" height="12" viewBox="0 0 60 30" aria-label="English" class="rounded-sm">
+        <clipPath id="t">
+          <path d="M0,0 v30 h60 v-30 z" />
+        </clipPath>
+        <clipPath id="s">
+          <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" />
+        </clipPath>
+        <g clip-path="url(#t)">
+          <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
+          <path d="M0,0 L60,30 M60,0 L0,30" stroke="#FFF" stroke-width="6" />
+          <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4" />
+          <path d="M30,0 v30 M0,15 h60" stroke="#FFF" stroke-width="10" />
+          <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6" />
+        </g>
       </svg>
 
-      <span>PT</span>
+      <span>EN</span>
     </a>
   </div>
 
@@ -96,39 +108,45 @@
   <main class="min-h-screen flex items-center">
     <section class="max-w-4xl mx-auto px-6 py-20">
 
+      <!-- HEADER -->
       <header class="flex flex-col md:flex-row items-center gap-8">
 
         <img src="kamila.jpg" class="w-40 h-40 rounded-full object-cover border border-neutral-800" />
 
         <div>
-          <h1 class="text-4xl font-bold">Kamila Mesquita</h1>
+          <h1 class="text-4xl font-bold tracking-tight">Kamila Mesquita</h1>
+
           <p class="mt-2 text-lg text-neutral-400">
-            Customer Service · Photography · Marketing
+            Atendimento ao Cliente · Fotografia · Marketing
           </p>
 
-          <p class="mt-4 text-neutral-300 max-w-xl">
-            Multifaceted professional with strong experience in customer service,
-            childcare, hospitality, professional photography, and marketing.
-            Purpose-driven, empathetic, and skilled in conflict mediation,
-            adopting a human-centered, welcoming, and service-oriented approach.
+          <p class="mt-4 text-neutral-300 leading-relaxed max-w-xl">
+            Profissional multifacetada, com forte experiência em atendimento ao cliente,
+            cuidados infantis, hospitalidade, fotografia profissional e marketing.
+            Orientada por propósito, empática e com competências em mediação de conflitos,
+            adotando uma abordagem humana, acolhedora e centrada no serviço.
           </p>
 
-          <div class="mt-6 flex gap-3">
+          <!-- ACTION BUTTONS -->
+          <div class="mt-6 flex flex-wrap gap-3">
             <a href="mailto:kamikerub@gmail.com"
-              class="flex items-center gap-2 px-4 py-2 bg-neutral-100 text-neutral-900 rounded-lg font-medium">
+              class="flex items-center gap-2 px-4 py-2 rounded-lg bg-neutral-100 text-neutral-900 font-medium hover:bg-neutral-200 transition">
               <i data-feather="mail"></i> Email
             </a>
+
             <a href="https://www.linkedin.com/in/kamila-kerubina-marques-mesquita-94a524146/" target="_blank"
-              class="flex items-center gap-2 px-4 py-2 border border-neutral-700 rounded-lg">
+              class="flex items-center gap-2 px-4 py-2 rounded-lg border border-neutral-700 hover:bg-neutral-800 transition">
               <i data-feather="linkedin"></i> LinkedIn
             </a>
+
             <a href="https://www.instagram.com/kamikerub/" target="_blank"
               class="flex items-center gap-2 px-4 py-2 rounded-lg border border-neutral-700 hover:bg-neutral-800 transition">
               <i data-feather="instagram"></i> Instagram
             </a>
+
             <a href="index.html"
               class="flex items-center gap-2 px-4 py-2 rounded-lg border border-neutral-700 hover:bg-neutral-800 transition">
-              <i data-feather="image"></i> Portfolio
+              <i data-feather="image"></i> Portfólio
             </a>
           </div>
         </div>
@@ -137,80 +155,80 @@
       <!-- AUDIO -->
       <section class="mt-12">
         <p class="text-sm uppercase tracking-widest text-neutral-500">
-          Audio Presentation
+          Apresentação em áudio
         </p>
         <audio controls class="w-full mt-3">
           <source src="intro.mp3" type="audio/mpeg" />
         </audio>
       </section>
 
-      <!-- DETAILS -->
+      <!-- INFO -->
       <section class="mt-16 grid md:grid-cols-2 gap-10">
         <div>
-          <h2 class="text-xl font-semibold">Information</h2>
+          <h2 class="text-xl font-semibold">Informações</h2>
           <ul class="mt-4 space-y-2 text-neutral-300">
-            <li><span class="text-neutral-500">Nationality:</span> Brazilian</li>
-            <li><span class="text-neutral-500">Location:</span> Porto, Portugal</li>
+            <li><span class="text-neutral-500">Nacionalidade:</span> Brasileira</li>
+            <li><span class="text-neutral-500">Localização:</span> Porto, Portugal</li>
             <li><span class="text-neutral-500">Email:</span> kamikerub@gmail.com</li>
-            <li><span class="text-neutral-500">Phone:</span> +351 910 287 918</li>
+            <li><span class="text-neutral-500">Telefone:</span> +351 910 287 918</li>
           </ul>
         </div>
 
         <div>
-          <h2 class="text-xl font-semibold">Languages</h2>
+          <h2 class="text-xl font-semibold">Idiomas</h2>
           <ul class="mt-4 space-y-2 text-neutral-300">
-            <li>Portuguese — Native</li>
-            <li>English — Intermediate (B2)</li>
+            <li>Português — Língua materna</li>
+            <li>Inglês — Intermédio (B2)</li>
           </ul>
         </div>
       </section>
 
       <!-- EXPERIENCE -->
       <section class="mt-16">
-        <h2 class="text-xl font-semibold">Professional Experience</h2>
+        <h2 class="text-xl font-semibold">Experiência Profissional</h2>
 
         <div class="mt-6 space-y-6 text-neutral-300">
 
           <div>
             <p class="font-medium text-neutral-100">
-              Freelance Photographer & Visual Content Specialist
+              Fotógrafa Freelancer & Especialista em Conteúdos Visuais
             </p>
             <p class="text-neutral-500 text-sm">
-              Brazil & United Kingdom · 2017 — Present
+              Brasil & Reino Unido · 2017 — Presente
             </p>
             <ul class="mt-2 list-disc list-inside space-y-1">
-              <li>Weddings, brand campaigns and editorial projects</li>
-              <li>Event and premiere coverage</li>
-              <li>Advanced post-production and retouching (Adobe Photoshop)</li>
-              <li>Creative direction and casting support</li>
+              <li>Casamentos, campanhas de marcas e projetos editoriais</li>
+              <li>Cobertura de eventos e estreias</li>
+              <li>Pós-produção e retoque avançado (Adobe Photoshop)</li>
+              <li>Apoio à direção criativa e casting</li>
             </ul>
           </div>
 
           <div>
             <p class="font-medium text-neutral-100">
-              Childcare Support
+              Apoio em Cuidados Infantis
             </p>
             <p class="text-neutral-500 text-sm">
-              United Kingdom · 2022 — 2025
+              Reino Unido · 2022 — 2025
             </p>
             <ul class="mt-2 list-disc list-inside space-y-1">
-              <li>Daily routines and family support</li>
-              <li>Emotional support and recreational activities</li>
-              <li>Human-centered and attentive approach</li>
+              <li>Apoio a famílias em rotinas diárias</li>
+              <li>Acompanhamento emocional e atividades recreativas</li>
+              <li>Abordagem humana e centrada na criança</li>
             </ul>
           </div>
 
           <div>
             <p class="font-medium text-neutral-100">
-              Customer Service Assistant
+              Assistente de Atendimento ao Cliente
             </p>
             <p class="text-neutral-500 text-sm">
-              Parada da Costela Restaurant — Brazil · 2022
+              Restaurante Parada da Costela — Brasil · 2022
             </p>
             <ul class="mt-2 list-disc list-inside space-y-1">
-              <li>Customer service and cashier operations</li>
-              <li>Social media marketing</li>
-              <li>Internal design and visual production</li>
+              <li>Atendimento ao cliente e operações de caixa</li>
+              <li>Marketing em redes sociais</li>
+              <li>Design interno e produção visual</li>
             </ul>
           </div>
 
@@ -228,10 +246,11 @@
         </div>
 
         <p class="text-neutral-400 text-center mt-6">
-          Professional profile intended for recruiters and job opportunities.
+          Perfil profissional destinado a recrutadores e oportunidades de trabalho.
         </p>
 
       </footer>
+
 
     </section>
   </main>

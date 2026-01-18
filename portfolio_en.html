@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kamila Mesquita — Photography Portfolio</title>
+    <meta name="description" content="Photography portfolio of Kamila Mesquita." />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .gallery {
+            animation: fadeIn 300ms ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .category-btn {
+            transition: transform 200ms ease, box-shadow 200ms ease;
+        }
+
+        .category-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .category-btn.active {
+            box-shadow: 0 0 0 2px #ffffffcc;
+        }
+    </style>
+</head>
+
+<body class="bg-neutral-950 text-neutral-100 antialiased">
+
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-neutral-950/80 backdrop-blur border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+            <!-- LOGO -->
+            <span class="font-semibold tracking-tight">Kamila Mesquita</span>
+
+            <!-- DESKTOP MENU -->
+            <nav class="hidden md:flex items-center gap-6 text-sm">
+
+                <a href="#portfolio" class="hover:text-neutral-300">Portfolio</a>
+                <a href="#about" class="hover:text-neutral-300">About</a>
+
+                <!-- LANGUAGE -->
+                <a href="index.html" class="flex items-center gap-2 h-9 px-4 rounded-full
+         border border-neutral-700 hover:bg-neutral-800 transition">
+                    <svg width="16" height="10" viewBox="0 0 60 30" class="rounded-sm">
+                        <rect width="24" height="30" x="0" y="0" fill="#006600" />
+                        <rect width="36" height="30" x="24" y="0" fill="#FF0000" />
+                        <circle cx="24" cy="15" r="6" fill="#FFD700" />
+                        <circle cx="24" cy="15" r="4" fill="#FFFFFF" />
+                    </svg>
+
+                    <span>Português</span>
+                </a>
+
+                <!-- CV -->
+                <a href="cv_en.html" class="h-9 px-4 rounded-full bg-neutral-100 text-neutral-900
+                 font-medium flex items-center hover:bg-neutral-200 transition">
+                    CV
+                </a>
+
+            </nav>
+
+            <!-- MOBILE BUTTON -->
+            <button id="menuBtn" class="md:hidden relative w-6 h-6">
+
+                <svg id="iconMenu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+
+                <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="hidden absolute inset-0">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+
+            </button>
+        </div>
+
+        <!-- MOBILE MENU -->
+        <div id="mobileMenu" class="absolute top-full left-0 right-0 md:hidden
+             border-t border-neutral-800
+             bg-neutral-950/95 backdrop-blur
+             opacity-0 -translate-y-3 pointer-events-none
+             transition-all duration-300 ease-out">
+
+            <nav class="flex flex-col px-6 py-6 gap-6 text-base">
+
+                <a href="#portfolio" class="hover:text-neutral-300">Portfolio</a>
+                <a href="#about" class="hover:text-neutral-300">About</a>
+
+                <div class="h-px bg-neutral-800"></div>
+
+                <a href="index.html" class="flex items-center gap-2 h-9 hover:bg-neutral-800 transition">
+                    <svg width="16" height="10" viewBox="0 0 60 30" class="rounded-sm">
+                        <rect width="24" height="30" x="0" y="0" fill="#006600" />
+                        <rect width="36" height="30" x="24" y="0" fill="#FF0000" />
+                        <circle cx="24" cy="15" r="6" fill="#FFD700" />
+                        <circle cx="24" cy="15" r="4" fill="#FFFFFF" />
+                    </svg>
+
+                    <span>Português</span>
+                </a>
+
+                <a href="cv_en.html" class="mt-2 px-4 py-2 rounded-lg bg-neutral-100
+                 text-neutral-900 font-medium text-center">
+                    CV
+                </a>
+
+            </nav>
+        </div>
+    </header>
+
+    <!-- INTRO -->
+    <section class="py-24 text-center px-6">
+        <h1 class="text-4xl font-bold tracking-tight">
+            Photography with human purpose
+        </h1>
+
+        <p class="mt-4 text-neutral-400 max-w-2xl mx-auto leading-relaxed">
+            My work is guided by attentive listening, sensitivity, and attention to detail.
+            I see photography as a way of telling real stories, creating authentic and
+            emotionally meaningful images.
+        </p>
+
+        <div class="mt-10 flex justify-center gap-4">
+            <a href="#portfolio" class="px-6 py-2 rounded-lg border border-neutral-700 hover:bg-neutral-800 transition">
+                View work
+            </a>
+            <a href="cv_en.html" class="px-6 py-2 rounded-lg bg-neutral-100 text-neutral-900
+               font-medium hover:bg-neutral-200 transition">
+                View CV
+            </a>
+        </div>
+    </section>
+
+    <!-- CATEGORY SELECTOR -->
+    <div class="flex flex-wrap justify-center gap-4 mb-12">
+
+        <button data-category="weddings"
+            class="category-btn relative overflow-hidden rounded-xl h-20 w-40 text-white font-medium active">
+            <img src="wedding.jpeg" class="absolute inset-0 w-full h-full object-cover blur-[1px] scale-110">
+            <div class="absolute inset-0 bg-black/50"></div>
+            <span class="relative z-10">Weddings</span>
+        </button>
+
+        <button data-category="portraits"
+            class="category-btn relative overflow-hidden rounded-xl h-20 w-40 text-white font-medium">
+            <img src="portrait.jpg" class="absolute inset-0 w-full h-full object-cover blur-[1px] scale-110">
+            <div class="absolute inset-0 bg-black/50"></div>
+            <span class="relative z-10">Portraits</span>
+        </button>
+
+        <button data-category="events"
+            class="category-btn relative overflow-hidden rounded-xl h-20 w-40 text-white font-medium">
+            <img src="event.jpg" class="absolute inset-0 w-full h-full object-cover
+             object-[center_15%] blur-[1px] scale-110">
+            <div class="absolute inset-0 bg-black/50"></div>
+            <span class="relative z-10">Events</span>
+        </button>
+
+    </div>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="max-w-7xl mx-auto px-6 py-6 space-y-24 scroll-mt-16">
+
+        <div id="galleryWrapper" class="relative">
+
+            <div class="gallery grid grid-cols-2 md:grid-cols-3 gap-4" data-gallery="weddings">
+                <img src="portfolio_1.jpg">
+                <img src="portfolio_1.jpg">
+                <img src="portfolio_1.jpg">
+            </div>
+
+            <div class="gallery hidden grid grid-cols-2 md:grid-cols-3 gap-4" data-gallery="portraits">
+                <img src="portfolio_1.jpg">
+                <img src="portfolio_1.jpg">
+                <img src="portfolio_1.jpg">
+            </div>
+
+            <div class="gallery hidden grid grid-cols-2 md:grid-cols-3 gap-4" data-gallery="events">
+                <img src="portfolio_1.jpg">
+                <img src="portfolio_1.jpg">
+                <img src="portfolio_1.jpg">
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="max-w-5xl mx-auto px-6 py-24 text-neutral-300">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+
+            <div class="flex justify-center md:justify-start">
+                <img src="kamila.jpg" alt="Kamila Mesquita"
+                    class="w-64 h-64 object-cover rounded-2xl border border-neutral-800" />
+            </div>
+
+            <div>
+                <h2 class="text-2xl font-semibold mb-6">About me</h2>
+                <p class="leading-relaxed">
+                    I am a photographer with experience in personal projects, events,
+                    campaigns, and visual content. My approach is centred on human
+                    relationships, subtle gestures, and spontaneous narratives.
+                    I work closely and respectfully, valuing the uniqueness of every story.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-neutral-800 py-16 px-6 text-center">
+        <p class="text-neutral-400 mb-6">
+            Interested in working together?
+        </p>
+
+        <div class="flex justify-center gap-4">
+            <a href="mailto:kamikerub@gmail.com" class="flex items-center gap-2 px-6 py-2 rounded-lg
+               bg-neutral-100 text-neutral-900 font-medium
+               hover:bg-neutral-200 transition">
+                <i data-feather="mail"></i> Contact
+            </a>
+
+            <a href="https://www.instagram.com/kamikerub/" target="_blank" class="flex items-center gap-2 px-6 py-2 rounded-lg
+               border border-neutral-700 hover:bg-neutral-800 transition">
+                <i data-feather="instagram"></i> Instagram
+            </a>
+        </div>
+
+        <p class="mt-10 text-neutral-500 text-sm">
+            © Kamila Mesquita — Photography Portfolio
+        </p>
+    </footer>
+
+    <script>
+        const buttons = document.querySelectorAll('.category-btn')
+        const galleries = document.querySelectorAll('.gallery')
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const category = btn.dataset.category
+
+                buttons.forEach(b => b.classList.remove('active'))
+                btn.classList.add('active')
+
+                galleries.forEach(gallery => {
+                    if (gallery.dataset.gallery === category) {
+                        gallery.classList.remove('hidden')
+                        gallery.style.animation = 'none'
+                        gallery.offsetHeight
+                        gallery.style.animation = ''
+                    } else {
+                        gallery.classList.add('hidden')
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+</html>

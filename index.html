@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kamila Mesquita — Perfil Profissional</title>
-  <meta name="description" content="Perfil profissional de Kamila Mesquita." />
+  <title>Kamila Mesquita — Portfolio Fotográfico</title>
+  <meta name="description" content="Portfolio fotográfico de Kamila Mesquita." />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/feather-icons"></script>
@@ -15,242 +15,281 @@
       scroll-behavior: smooth;
     }
 
-    /* trilho do gato = a linha do footer */
-    .cat-track {
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 12px;
-      /* alinha com a linha */
-      pointer-events: none;
-      overflow: hidden;
+    .gallery {
+      animation: fadeIn 300ms ease forwards;
     }
 
-    .cat-img {
-      position: relative;
-      height: 48px;
-      opacity: 0.85;
-      animation: catWalk 7s linear infinite;
-    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
 
-    @media (max-width: 768px) {
-      @keyframes catWalk {
-        from {
-          transform: translateX(-80px);
-        }
-
-        to {
-          transform: translateX(95vw);
-          /* sai mais cedo */
-        }
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
 
-    @media (min-width: 769px) {
-      @keyframes catWalk {
-        from {
-          transform: translateX(-80px);
-        }
-
-        to {
-          transform: translateX(85vw);
-        }
-      }
+    .category-btn {
+      transition: transform 200ms ease, box-shadow 200ms ease;
     }
 
-    /* mobile: menor, mas ainda rápido */
-    @media (max-width: 768px) {
-      .cat-img {
-        height: 48px;
-        animation-duration: 9s;
-      }
+    .category-btn:hover {
+      transform: translateY(-2px);
     }
 
-    /* mobile: gato menor e mais lento */
-    @media (max-width: 768px) {
-      .cat-img {
-        height: 48px;
-        animation-duration: 6s;
-      }
+    .category-btn.active {
+      box-shadow: 0 0 0 2px #ffffffcc;
     }
   </style>
+
 </head>
 
 <body class="bg-neutral-950 text-neutral-100 antialiased">
 
-  <!-- LANGUAGE SWITCH -->
-  <div class="fixed top-5 right-5 z-50">
-    <a href="cv_en.html"
-      class="flex items-center gap-2 text-sm px-3 py-1 rounded-full border border-neutral-700 hover:bg-neutral-800 transition">
+  <!-- HEADER -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-neutral-950/80 backdrop-blur border-b border-neutral-800">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
-      <!-- UK FLAG -->
-      <svg width="18" height="12" viewBox="0 0 60 30" aria-label="English" class="rounded-sm">
-        <clipPath id="t">
-          <path d="M0,0 v30 h60 v-30 z" />
-        </clipPath>
-        <clipPath id="s">
-          <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" />
-        </clipPath>
-        <g clip-path="url(#t)">
-          <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
-          <path d="M0,0 L60,30 M60,0 L0,30" stroke="#FFF" stroke-width="6" />
-          <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4" />
-          <path d="M30,0 v30 M0,15 h60" stroke="#FFF" stroke-width="10" />
-          <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6" />
-        </g>
-      </svg>
+      <!-- LOGO -->
+      <span class="font-semibold tracking-tight">Kamila Mesquita</span>
 
-      <span>EN</span>
-    </a>
+      <!-- DESKTOP MENU -->
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+
+        <a href="#portfolio" class="hover:text-neutral-300">Portfolio</a>
+        <a href="#sobre" class="hover:text-neutral-300">Sobre</a>
+
+        <!-- IDIOMA -->
+        <a href="portfolio_en.html" class="flex items-center gap-2 h-9 px-4 rounded-full
+               border border-neutral-700 hover:bg-neutral-800 transition">
+          <span class="flex items-center gap-2">
+            <svg width="16" height="10" viewBox="0 0 60 30" class="rounded-sm">
+              <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
+              <path d="M0,0 L60,30 M60,0 L0,30" stroke="#FFF" stroke-width="6" />
+              <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4" />
+              <path d="M30,0 v30 M0,15 h60" stroke="#FFF" stroke-width="10" />
+              <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6" />
+            </svg>
+            <span>English</span>
+          </span>
+        </a>
+
+        <!-- CV -->
+        <a href="cv_pt.html" class="h-9 px-4 rounded-full bg-neutral-100 text-neutral-900
+               font-medium flex items-center hover:bg-neutral-200 transition">
+          Currículo
+        </a>
+
+      </nav>
+
+      <!-- MOBILE BUTTON -->
+      <button id="menuBtn" class="md:hidden relative w-6 h-6">
+
+        <svg id="iconMenu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+
+        <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="hidden absolute inset-0">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+
+      </button>
+
+
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div id="mobileMenu" class="absolute top-full left-0 right-0 md:hidden
+         border-t border-neutral-800
+         bg-neutral-950/95 backdrop-blur
+         opacity-0 -translate-y-3 pointer-events-none
+         transition-all duration-300 ease-out">
+      <nav class="flex flex-col px-6 py-6 gap-6 text-base">
+
+        <a href="#portfolio" class="hover:text-neutral-300">Portfolio</a>
+        <a href="#sobre" class="hover:text-neutral-300">Sobre</a>
+
+        <div class="h-px bg-neutral-800"></div>
+
+        <a href="portfolio_en.html" class="flex items-center gap-3">
+          <span class="flex items-center gap-2">
+            <svg width="16" height="10" viewBox="0 0 60 30" class="rounded-sm">
+              <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
+              <path d="M0,0 L60,30 M60,0 L0,30" stroke="#FFF" stroke-width="6" />
+              <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4" />
+              <path d="M30,0 v30 M0,15 h60" stroke="#FFF" stroke-width="10" />
+              <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6" />
+            </svg>
+            <span>English</span>
+          </span>
+        </a>
+
+        <a href="cv.html" class="mt-2 px-4 py-2 rounded-lg bg-neutral-100
+             text-neutral-900 font-medium text-center">
+          Currículo
+        </a>
+
+      </nav>
+    </div>
+  </header>
+
+  <!-- INTRO -->
+  <section class="py-24 text-center px-6">
+    <h1 class="text-4xl font-bold tracking-tight">Fotografia com propósito humano</h1>
+
+    <p class="mt-4 text-neutral-400 max-w-2xl mx-auto leading-relaxed">
+      Meu trabalho é guiado pela escuta, sensibilidade e atenção aos detalhes.
+      Acredito na fotografia como uma forma de contar histórias reais,
+      criando imagens autênticas e emocionalmente conectadas.
+    </p>
+
+    <div class="mt-10 flex justify-center gap-4">
+      <a href="#portfolio" class="px-6 py-2 rounded-lg border border-neutral-700 hover:bg-neutral-800 transition">
+        Ver trabalhos
+      </a>
+      <a href="cv.html"
+        class="px-6 py-2 rounded-lg bg-neutral-100 text-neutral-900 font-medium hover:bg-neutral-200 transition">
+        Ver currículo
+      </a>
+    </div>
+  </section>
+
+  <!-- CATEGORY SELECTOR -->
+  <div class="flex flex-wrap justify-center gap-4 mb-12">
+    <button data-category="weddings"
+      class="category-btn relative overflow-hidden rounded-xl h-20 w-40 text-white font-medium active">
+      <img src="wedding.jpeg" class="absolute inset-0 w-full h-full object-cover blur-[1px] scale-110">
+      <div class="absolute inset-0 bg-black/50"></div>
+      <span class="relative z-10">Casamentos</span>
+    </button>
+
+    <button data-category="portraits"
+      class="category-btn relative overflow-hidden rounded-xl h-20 w-40 text-white font-medium">
+      <img src="portrait.jpg" class="absolute inset-0 w-full h-full object-cover blur-[1px] scale-110">
+      <div class="absolute inset-0 bg-black/50"></div>
+      <span class="relative z-10">Retratos</span>
+    </button>
+
+    <button data-category="events"
+      class="category-btn relative overflow-hidden rounded-xl h-20 w-40 text-white font-medium">
+      <img src="event.jpg" class="absolute inset-0 w-full h-full object-cover
+         object-[center_15%] blur-[1px] scale-110">
+      <div class="absolute inset-0 bg-black/50"></div>
+      <span class="relative z-10">Eventos</span>
+    </button>
+
   </div>
 
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="max-w-7xl mx-auto px-6 py-6 space-y-24 scroll-mt-16">
 
-  <main class="min-h-screen flex items-center">
-    <section class="max-w-4xl mx-auto px-6 py-20">
+    <!-- GALLERIES -->
+    <div id="galleryWrapper" class="relative">
 
-      <!-- HEADER -->
-      <header class="flex flex-col md:flex-row items-center gap-8">
+      <div class="gallery grid grid-cols-2 md:grid-cols-3 gap-4" data-gallery="weddings">
+        <img src="portfolio_1.jpg">
+        <img src="portfolio_1.jpg">
+        <img src="portfolio_1.jpg">
+      </div>
 
-        <img src="kamila.jpg" class="w-40 h-40 rounded-full object-cover border border-neutral-800" />
+      <div class="gallery hidden grid grid-cols-2 md:grid-cols-3 gap-4" data-gallery="portraits">
+        <img src="portfolio_1.jpg">
+        <img src="portfolio_1.jpg">
+        <img src="portfolio_1.jpg">
+      </div>
 
-        <div>
-          <h1 class="text-4xl font-bold tracking-tight">Kamila Mesquita</h1>
+      <div class="gallery hidden grid grid-cols-2 md:grid-cols-3 gap-4" data-gallery="events">
+        <img src="portfolio_1.jpg">
+        <img src="portfolio_1.jpg">
+        <img src="portfolio_1.jpg">
+      </div>
 
-          <p class="mt-2 text-lg text-neutral-400">
-            Atendimento ao Cliente · Fotografia · Marketing
-          </p>
+    </div>
 
-          <p class="mt-4 text-neutral-300 leading-relaxed max-w-xl">
-            Profissional multifacetada, com forte experiência em atendimento ao cliente,
-            cuidados infantis, hospitalidade, fotografia profissional e marketing.
-            Orientada por propósito, empática e com competências em mediação de conflitos,
-            adotando uma abordagem humana, acolhedora e centrada no serviço.
-          </p>
+  </section>
 
-          <!-- ACTION BUTTONS -->
-          <div class="mt-6 flex flex-wrap gap-3">
-            <a href="mailto:kamikerub@gmail.com"
-              class="flex items-center gap-2 px-4 py-2 rounded-lg bg-neutral-100 text-neutral-900 font-medium hover:bg-neutral-200 transition">
-              <i data-feather="mail"></i> Email
-            </a>
+  <!-- SOBRE -->
+  <section id="sobre" class="max-w-5xl mx-auto px-6 py-24 text-neutral-300">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
 
-            <a href="https://www.linkedin.com/in/kamila-kerubina-marques-mesquita-94a524146/" target="_blank"
-              class="flex items-center gap-2 px-4 py-2 rounded-lg border border-neutral-700 hover:bg-neutral-800 transition">
-              <i data-feather="linkedin"></i> LinkedIn
-            </a>
+      <!-- FOTO -->
+      <div class="flex justify-center md:justify-start">
+        <img src="kamila.jpg" alt="Kamila Mesquita"
+          class="w-64 h-64 object-cover rounded-2xl border border-neutral-800" />
+      </div>
 
-            <a href="https://www.instagram.com/kamikerub/" target="_blank"
-              class="flex items-center gap-2 px-4 py-2 rounded-lg border border-neutral-700 hover:bg-neutral-800 transition">
-              <i data-feather="instagram"></i> Instagram
-            </a>
-          </div>
-        </div>
-      </header>
-
-      <!-- AUDIO -->
-      <section class="mt-12">
-        <p class="text-sm uppercase tracking-widest text-neutral-500">
-          Apresentação em áudio
+      <!-- TEXTO -->
+      <div>
+        <h2 class="text-2xl font-semibold mb-6">Sobre mim</h2>
+        <p class="leading-relaxed">
+          Sou fotógrafa com experiência em projetos autorais, eventos, campanhas e conteúdo visual.
+          Meu olhar é atento às relações humanas, aos gestos sutis e às narrativas que surgem
+          de forma espontânea. Trabalho de forma próxima, acolhedora e respeitosa,
+          valorizando a individualidade de cada história.
         </p>
-        <audio controls class="w-full mt-3">
-          <source src="intro.mp3" type="audio/mpeg" />
-        </audio>
-      </section>
+      </div>
 
-      <!-- INFO -->
-      <section class="mt-16 grid md:grid-cols-2 gap-10">
-        <div>
-          <h2 class="text-xl font-semibold">Informações</h2>
-          <ul class="mt-4 space-y-2 text-neutral-300">
-            <li><span class="text-neutral-500">Nacionalidade:</span> Brasileira</li>
-            <li><span class="text-neutral-500">Localização:</span> Porto, Portugal</li>
-            <li><span class="text-neutral-500">Email:</span> kamikerub@gmail.com</li>
-            <li><span class="text-neutral-500">Telefone:</span> +351 910 287 918</li>
-          </ul>
-        </div>
+    </div>
+  </section>
 
-        <div>
-          <h2 class="text-xl font-semibold">Idiomas</h2>
-          <ul class="mt-4 space-y-2 text-neutral-300">
-            <li>Português — Língua materna</li>
-            <li>Inglês — Intermédio (B2)</li>
-          </ul>
-        </div>
-      </section>
+  <!-- FOOTER -->
+  <footer class="border-t border-neutral-800 py-16 px-6 text-center">
+    <p class="text-neutral-400 mb-6">
+      Interessado em trabalhar comigo?
+    </p>
 
-      <!-- EXPERIENCE -->
-      <section class="mt-16">
-        <h2 class="text-xl font-semibold">Experiência Profissional</h2>
+    <div class="flex justify-center gap-4">
+      <a href="mailto:kamikerub@gmail.com"
+        class="flex items-center gap-2 px-6 py-2 rounded-lg bg-neutral-100 text-neutral-900 font-medium hover:bg-neutral-200 transition">
+        <i data-feather="mail"></i> Contacto
+      </a>
 
-        <div class="mt-6 space-y-6 text-neutral-300">
+      <a href="https://www.instagram.com/kamikerub/" target="_blank"
+        class="flex items-center gap-2 px-6 py-2 rounded-lg border border-neutral-700 hover:bg-neutral-800 transition">
+        <i data-feather="instagram"></i> Instagram
+      </a>
+    </div>
 
-          <div>
-            <p class="font-medium text-neutral-100">
-              Fotógrafa Freelancer & Especialista em Conteúdos Visuais
-            </p>
-            <p class="text-neutral-500 text-sm">
-              Brasil & Reino Unido · 2017 — Presente
-            </p>
-            <ul class="mt-2 list-disc list-inside space-y-1">
-              <li>Casamentos, campanhas de marcas e projetos editoriais</li>
-              <li>Cobertura de eventos e estreias</li>
-              <li>Pós-produção e retoque avançado (Adobe Photoshop)</li>
-              <li>Apoio à direção criativa e casting</li>
-            </ul>
-          </div>
+    <p class="mt-10 text-neutral-500 text-sm">
+      © Kamila Mesquita — Portfolio Fotográfico
+    </p>
+  </footer>
 
-          <div>
-            <p class="font-medium text-neutral-100">
-              Apoio em Cuidados Infantis
-            </p>
-            <p class="text-neutral-500 text-sm">
-              Reino Unido · 2022 — 2025
-            </p>
-            <ul class="mt-2 list-disc list-inside space-y-1">
-              <li>Apoio a famílias em rotinas diárias</li>
-              <li>Acompanhamento emocional e atividades recreativas</li>
-              <li>Abordagem humana e centrada na criança</li>
-            </ul>
-          </div>
+  <script>
+    const buttons = document.querySelectorAll('.category-btn')
+    const galleries = document.querySelectorAll('.gallery')
 
-          <div>
-            <p class="font-medium text-neutral-100">
-              Assistente de Atendimento ao Cliente
-            </p>
-            <p class="text-neutral-500 text-sm">
-              Restaurante Parada da Costela — Brasil · 2022
-            </p>
-            <ul class="mt-2 list-disc list-inside space-y-1">
-              <li>Atendimento ao cliente e operações de caixa</li>
-              <li>Marketing em redes sociais</li>
-              <li>Design interno e produção visual</li>
-            </ul>
-          </div>
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const category = btn.dataset.category
 
-        </div>
-      </section>
+        // botão ativo
+        buttons.forEach(b => b.classList.remove('active'))
+        btn.classList.add('active')
 
-      <footer class="relative mt-20 pt-12 overflow-hidden">
+        // troca galeria
+        galleries.forEach(gallery => {
+          if (gallery.dataset.gallery === category) {
+            gallery.classList.remove('hidden')
+            gallery.style.animation = 'none'
+            gallery.offsetHeight // reflow
+            gallery.style.animation = ''
+          } else {
+            gallery.classList.add('hidden')
+          }
+        })
+      })
+    })
+  </script>
 
-        <!-- linha do footer -->
-        <div class="h-px bg-neutral-800 w-full"></div>
-
-        <!-- gato andando sobre a linha -->
-        <div class="cat-track">
-          <img src="cat_walking.gif" alt="Walking cat" class="cat-img" />
-        </div>
-
-        <p class="text-neutral-400 text-center mt-6">
-          Perfil profissional destinado a recrutadores e oportunidades de trabalho.
-        </p>
-
-      </footer>
-
-
-    </section>
-  </main>
-
-  <script>feather.replace()</script>
 </body>
 
 </html>
