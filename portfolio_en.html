@@ -257,27 +257,68 @@
     </footer>
 
     <script>
-        const buttons = document.querySelectorAll('.category-btn')
-        const galleries = document.querySelectorAll('.gallery')
+        document.addEventListener('DOMContentLoaded', () => {
 
-        buttons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const category = btn.dataset.category
+            /* ======================
+               MOBILE MENU
+            ====================== */
 
-                buttons.forEach(b => b.classList.remove('active'))
-                btn.classList.add('active')
+            const menuBtn = document.getElementById('menuBtn')
+            const mobileMenu = document.getElementById('mobileMenu')
+            const iconMenu = document.getElementById('iconMenu')
+            const iconClose = document.getElementById('iconClose')
 
-                galleries.forEach(gallery => {
-                    if (gallery.dataset.gallery === category) {
-                        gallery.classList.remove('hidden')
-                        gallery.style.animation = 'none'
-                        gallery.offsetHeight
-                        gallery.style.animation = ''
+            if (menuBtn && mobileMenu) {
+                let open = false
+
+                menuBtn.addEventListener('click', () => {
+                    open = !open
+
+                    if (open) {
+                        mobileMenu.classList.remove('opacity-0', '-translate-y-3', 'pointer-events-none')
+                        mobileMenu.classList.add('opacity-100', 'translate-y-0')
+
+                        iconMenu.classList.add('hidden')
+                        iconClose.classList.remove('hidden')
                     } else {
-                        gallery.classList.add('hidden')
+                        mobileMenu.classList.add('opacity-0', '-translate-y-3', 'pointer-events-none')
+                        mobileMenu.classList.remove('opacity-100', 'translate-y-0')
+
+                        iconMenu.classList.remove('hidden')
+                        iconClose.classList.add('hidden')
                     }
                 })
-            })
+            }
+
+            /* ======================
+               CATEGORY SWITCHER
+            ====================== */
+
+            const categoryButtons = document.querySelectorAll('.category-btn')
+            const galleries = document.querySelectorAll('.gallery')
+
+            if (categoryButtons.length && galleries.length) {
+                categoryButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const category = button.dataset.category
+
+                        categoryButtons.forEach(b => b.classList.remove('active'))
+                        button.classList.add('active')
+
+                        galleries.forEach(gallery => {
+                            if (gallery.dataset.gallery === category) {
+                                gallery.classList.remove('hidden')
+                                gallery.style.animation = 'none'
+                                gallery.offsetHeight
+                                gallery.style.animation = ''
+                            } else {
+                                gallery.classList.add('hidden')
+                            }
+                        })
+                    })
+                })
+            }
+
         })
     </script>
 </body>
