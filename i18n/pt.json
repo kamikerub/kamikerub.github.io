@@ -1,0 +1,55 @@
+{
+    "title": "Kamila Mesquita",
+    "subtitle": "Atendimento ao Cliente · Fotografia · Marketing",
+    "about": "Profissional multifacetada, com forte experiência em atendimento ao cliente, cuidados infantis, hospitalidade, fotografia profissional e marketing. Orientada por propósito, empática e com competências em mediação de conflitos, adotando uma abordagem humana, acolhedora e centrada no serviço.",
+    "audioTitle": "Apresentação em áudio",
+    "info": {
+        "title": "Informações",
+        "nationalityLabel": "Nacionalidade:",
+        "nationalityValue": "Brasileira",
+        "locationLabel": "Localização:",
+        "locationValue": "Porto, Portugal",
+        "emailLabel": "Email:",
+        "emailValue": "kamikerub@gmail.com",
+        "phoneLabel": "Telefone:",
+        "phoneValue": "+351 910 287 918"
+    },
+    "languages": {
+        "title": "Idiomas",
+        "pt": "Português — Língua materna",
+        "en": "Inglês — Intermédio (B2)"
+    },
+    "experience": {
+        "title": "Experiência Profissional",
+        "photoTitle": "Fotógrafa Freelancer & Especialista em Conteúdos Visuais",
+        "photoPeriod": "Brasil & Reino Unido · 2017 — Presente",
+        "photoItems": [
+            "Casamentos, campanhas de marcas e projetos editoriais",
+            "Cobertura de eventos e estreias",
+            "Pós-produção e retoque avançado (Adobe Photoshop)",
+            "Apoio à direção criativa e casting"
+        ],
+        "childTitle": "Apoio em Cuidados Infantis",
+        "childPeriod": "Reino Unido · 2022 — 2025",
+        "childItems": [
+            "Apoio a famílias em rotinas diárias",
+            "Acompanhamento emocional e atividades recreativas",
+            "Abordagem humana e centrada na criança"
+        ],
+        "serviceTitle": "Assistente de Atendimento ao Cliente",
+        "servicePeriod": "Restaurante Parada da Costela — Brasil · 2022",
+        "serviceItems": [
+            "Atendimento ao cliente e operações de caixa",
+            "Marketing em redes sociais",
+            "Design interno e produção visual"
+        ]
+    },
+    "footer": "Perfil profissional destinado a recrutadores e oportunidades de trabalho.",
+    "buttons": {
+        "email": "Email",
+        "linkedin": "LinkedIn",
+        "instagram": "Instagram",
+        "cv": "Currículo em PDF",
+        "cvLink": "files/CVKAMILA - PT.pdf"
+    }
+}

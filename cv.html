@@ -13,6 +13,63 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/feather-icons"></script>
 
+  <script>
+    function getValue(obj, path) {
+      return path.split('.').reduce((o, k) => o?.[k], obj);
+    }
+
+    async function loadLang(lang) {
+      const res = await fetch(`/i18n/${lang}.json`);
+      const data = await res.json();
+
+      // troca botões de idioma
+      document.getElementById(`lang-${lang === 'en' ? 'pt' : 'en'}`).style.display = 'block';
+      document.getElementById(`lang-${lang}`).style.display = 'none';
+
+      // textos simples
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        const value = getValue(data, key);
+
+        if (value !== undefined) {
+          el.textContent = value;
+        }
+      });
+
+      // listas dinâmicas
+      document.querySelectorAll('[data-i18n-list]').forEach(ul => {
+        const key = ul.dataset.i18nList;
+        const items = getValue(data, key);
+
+        if (Array.isArray(items)) {
+          ul.innerHTML = '';
+          items.forEach(text => {
+            const li = document.createElement('li');
+            li.textContent = text;
+            ul.appendChild(li);
+          });
+        }
+      });
+
+      // links dinâmicos (href)
+      document.querySelectorAll('[data-i18n-href]').forEach(el => {
+        const key = el.dataset.i18nHref;
+        const value = getValue(data, key);
+
+        if (value) {
+          el.setAttribute('href', value);
+        }
+      });
+
+      localStorage.setItem('lang', lang);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('lang') || 'pt';
+      loadLang(savedLang);
+    });
+  </script>
+
   <style>
     html {
       scroll-behavior: smooth;
@@ -82,8 +139,8 @@
 <body class="bg-neutral-950 text-neutral-100 antialiased">
 
   <!-- LANGUAGE SWITCH -->
-  <div class="fixed top-5 right-5 z-50">
-    <a href="cv_en.html"
+  <div id="lang-en" class="fixed top-5 right-5 z-50">
+    <a href="javascript:void(0);" onclick="loadLang('en');"
       class="flex items-center gap-2 text-sm px-3 py-1 rounded-full border border-neutral-700 hover:bg-neutral-800 transition">
 
       <!-- UK FLAG -->
@@ -107,6 +164,20 @@
     </a>
   </div>
 
+  <div id="lang-pt" class="fixed top-5 right-5 z-50" style="display: none;">
+    <a href="javascript:void(0);" onclick="loadLang('pt');"
+      class="flex items-center gap-2 text-sm px-3 py-1 rounded-full border border-neutral-700 hover:bg-neutral-800 transition">
+
+      <!-- PORTUGAL FLAG -->
+      <svg width="18" height="12" viewBox="0 0 30 20" aria-label="Português" class="rounded-sm">
+        <rect width="12" height="20" fill="#006600" />
+        <rect x="12" width="18" height="20" fill="#FF0000" />
+        <circle cx="12" cy="10" r="4" fill="#FFCC00" />
+      </svg>
+
+      <span>PT</span>
+    </a>
+  </div>
 
   <main class="min-h-screen flex items-center">
     <section class="max-w-4xl mx-auto px-6 py-20">
@@ -114,43 +185,39 @@
       <!-- HEADER -->
       <header class="flex flex-col md:flex-row items-center gap-8">
 
-        <img src="kamila.jpg" class="w-40 h-40 rounded-full object-cover border border-neutral-800" />
+        <img src="images/kamila.jpg" class="w-40 h-40 rounded-full object-cover border border-neutral-800" />
 
         <div>
-          <h1 class="text-4xl font-bold tracking-tight">Kamila Mesquita</h1>
+          <h1 data-i18n="title" class="text-4xl font-bold tracking-tight"></h1>
 
-          <p class="mt-2 text-lg text-neutral-400">
-            Atendimento ao Cliente · Fotografia · Marketing
+          <p data-i18n="subtitle" class="mt-2 text-lg text-neutral-400">
           </p>
 
-          <p class="mt-4 text-neutral-300 leading-relaxed max-w-xl">
-            Profissional multifacetada, com forte experiência em atendimento ao cliente,
-            cuidados infantis, hospitalidade, fotografia profissional e marketing.
-            Orientada por propósito, empática e com competências em mediação de conflitos,
-            adotando uma abordagem humana, acolhedora e centrada no serviço.
+          <p data-i18n="about" class="mt-4 text-neutral-300 leading-relaxed max-w-xl">
           </p>
 
           <!-- ACTION BUTTONS -->
           <div class="mt-6 flex flex-wrap gap-3">
             <a href="mailto:kamikerub@gmail.com"
               class="flex items-center gap-2 px-4 py-2 rounded-lg bg-neutral-100 text-neutral-900 font-medium hover:bg-neutral-200 transition">
-              <i data-feather="mail"></i> Email
+              <i data-feather="mail"></i> <span data-i18n="buttons.email"></span>
             </a>
 
             <a href="https://www.linkedin.com/in/kamila-kerubina-marques-mesquita-94a524146/" target="_blank"
               class="flex items-center gap-2 px-4 py-2 rounded-lg border border-neutral-700 hover:bg-neutral-800 transition">
-              <i data-feather="linkedin"></i> LinkedIn
+              <i data-feather="linkedin"></i> <span data-i18n="buttons.linkedin"></span>
             </a>
 
             <a href="https://www.instagram.com/kamikerub/" target="_blank"
               class="flex items-center gap-2 px-4 py-2 rounded-lg border border-neutral-700 hover:bg-neutral-800 transition">
-              <i data-feather="instagram"></i> Instagram
+              <i data-feather="instagram"></i> <span data-i18n="buttons.instagram"></span>
             </a>
 
-            <a href="CVKAMILA - PT.pdf" target="_blank"
+            <a data-i18n-href="buttons.cvLink" target="_blank"
               class="flex items-center gap-2 px-4 py-2 rounded-lg border border-neutral-700 hover:bg-neutral-800 transition">
+
               <i data-feather="file-text"></i>
-              Currículo em PDF
+              <span data-i18n="buttons.cv"></span>
             </a>
 
             <!-- <a href="index.html"
@@ -163,8 +230,7 @@
 
       <!-- AUDIO -->
       <section class="mt-12">
-        <p class="text-sm uppercase tracking-widest text-neutral-500">
-          Apresentação em áudio
+        <p data-i18n="audioTitle" class="text-sm uppercase tracking-widest text-neutral-500">
         </p>
         <audio controls class="w-full mt-3">
           <source src="intro.mp3" type="audio/mpeg" />
@@ -174,70 +240,58 @@
       <!-- INFO -->
       <section class="mt-16 grid md:grid-cols-2 gap-10">
         <div>
-          <h2 class="text-xl font-semibold">Informações</h2>
+          <h2 data-i18n="info.title" class="text-xl font-semibold">Informações</h2>
           <ul class="mt-4 space-y-2 text-neutral-300">
-            <li><span class="text-neutral-500">Nacionalidade:</span> Brasileira</li>
-            <li><span class="text-neutral-500">Localização:</span> Porto, Portugal</li>
-            <li><span class="text-neutral-500">Email:</span> kamikerub@gmail.com</li>
-            <li><span class="text-neutral-500">Telefone:</span> +351 910 287 918</li>
+            <li><span class="text-neutral-500" data-i18n="info.nationalityLabel"></span> <span
+                data-i18n="info.nationalityValue"></span></li>
+            <li><span class="text-neutral-500" data-i18n="info.locationLabel"></span> <span
+                data-i18n="info.locationValue"></span></li>
+            <li><span class="text-neutral-500" data-i18n="info.emailLabel"></span> <span
+                data-i18n="info.emailValue"></span></li>
+            <li><span class="text-neutral-500" data-i18n="info.phoneLabel"></span> <span
+                data-i18n="info.phoneValue"></span></li>
           </ul>
         </div>
 
         <div>
-          <h2 class="text-xl font-semibold">Idiomas</h2>
+          <h2 data-i18n="languages.title" class="text-xl font-semibold"></h2>
           <ul class="mt-4 space-y-2 text-neutral-300">
-            <li>Português — Língua materna</li>
-            <li>Inglês — Intermédio (B2)</li>
+            <li data-i18n="languages.pt"></li>
+            <li data-i18n="languages.en"></li>
           </ul>
         </div>
       </section>
 
       <!-- EXPERIENCE -->
       <section class="mt-16">
-        <h2 class="text-xl font-semibold">Experiência Profissional</h2>
+        <h2 data-i18n="experience.title" class="text-xl font-semibold"></h2>
 
         <div class="mt-6 space-y-6 text-neutral-300">
 
           <div>
-            <p class="font-medium text-neutral-100">
-              Fotógrafa Freelancer & Especialista em Conteúdos Visuais
+            <p class="font-medium text-neutral-100" data-i18n="experience.photoTitle">
             </p>
-            <p class="text-neutral-500 text-sm">
-              Brasil & Reino Unido · 2017 — Presente
+            <p class="text-neutral-500 text-sm" data-i18n="experience.photoPeriod">
             </p>
-            <ul class="mt-2 list-disc list-inside space-y-1">
-              <li>Casamentos, campanhas de marcas e projetos editoriais</li>
-              <li>Cobertura de eventos e estreias</li>
-              <li>Pós-produção e retoque avançado (Adobe Photoshop)</li>
-              <li>Apoio à direção criativa e casting</li>
+            <ul data-i18n-list="experience.photoItems" class="mt-2 list-disc list-inside space-y-1">
             </ul>
           </div>
 
           <div>
-            <p class="font-medium text-neutral-100">
-              Apoio em Cuidados Infantis
+            <p class="font-medium text-neutral-100" data-i18n="experience.childTitle">
             </p>
-            <p class="text-neutral-500 text-sm">
-              Reino Unido · 2022 — 2025
+            <p class="text-neutral-500 text-sm" data-i18n="experience.childPeriod">
             </p>
-            <ul class="mt-2 list-disc list-inside space-y-1">
-              <li>Apoio a famílias em rotinas diárias</li>
-              <li>Acompanhamento emocional e atividades recreativas</li>
-              <li>Abordagem humana e centrada na criança</li>
+            <ul data-i18n-list="experience.childItems" class="mt-2 list-disc list-inside space-y-1">
             </ul>
           </div>
 
           <div>
-            <p class="font-medium text-neutral-100">
-              Assistente de Atendimento ao Cliente
+            <p class="font-medium text-neutral-100" data-i18n="experience.serviceTitle">
             </p>
-            <p class="text-neutral-500 text-sm">
-              Restaurante Parada da Costela — Brasil · 2022
+            <p class="text-neutral-500 text-sm" data-i18n="experience.servicePeriod">
             </p>
-            <ul class="mt-2 list-disc list-inside space-y-1">
-              <li>Atendimento ao cliente e operações de caixa</li>
-              <li>Marketing em redes sociais</li>
-              <li>Design interno e produção visual</li>
+            <ul data-i18n-list="experience.serviceItems" class="mt-2 list-disc list-inside space-y-1">
             </ul>
           </div>
 
@@ -251,11 +305,10 @@
 
         <!-- gato andando sobre a linha -->
         <div class="cat-track">
-          <img src="cat_walking.gif" alt="Walking cat" class="cat-img" />
+          <img src="images/cat_walking.gif" alt="Walking cat" class="cat-img" />
         </div>
 
-        <p class="text-neutral-400 text-center mt-6">
-          Perfil profissional destinado a recrutadores e oportunidades de trabalho.
+        <p data-i18n="footer" class="text-neutral-400 text-center mt-6">
         </p>
 
       </footer>

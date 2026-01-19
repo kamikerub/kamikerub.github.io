@@ -1,0 +1,55 @@
+{
+    "title": "Kamila Mesquita",
+    "subtitle": "Customer Service · Photography · Marketing",
+    "about": "Multifaceted professional with strong experience in customer service, childcare, hospitality, professional photography, and marketing. Purpose-driven, empathetic, and skilled in conflict mediation, adopting a human-centred, welcoming, and service-oriented approach.",
+    "audioTitle": "Audio introduction",
+    "info": {
+        "title": "Information",
+        "nationalityLabel": "Nationality:",
+        "nationalityValue": "Brazilian",
+        "locationLabel": "Location:",
+        "locationValue": "Porto, Portugal",
+        "emailLabel": "Email:",
+        "emailValue": "kamikerub@gmail.com",
+        "phoneLabel": "Phone:",
+        "phoneValue": "+351 910 287 918"
+    },
+    "languages": {
+        "title": "Languages",
+        "pt": "Portuguese — Native",
+        "en": "English — Intermediate (B2)"
+    },
+    "experience": {
+        "title": "Professional Experience",
+        "photoTitle": "Freelance Photographer & Visual Content Specialist",
+        "photoPeriod": "Brazil & United Kingdom · 2017 — Present",
+        "photoItems": [
+            "Weddings, brand campaigns, and editorial projects",
+            "Event coverage and premieres",
+            "Advanced image post-production and retouching (Adobe Photoshop)",
+            "Support in creative direction and casting"
+        ],
+        "childTitle": "Childcare Support",
+        "childPeriod": "United Kingdom · 2022 — 2025",
+        "childItems": [
+            "Support to families in daily routines",
+            "Emotional support and recreational activities",
+            "Human-centred and child-focused approach"
+        ],
+        "serviceTitle": "Customer Service Assistant",
+        "servicePeriod": "Parada da Costela Restaurant — Brazil · 2022",
+        "serviceItems": [
+            "Customer service and cash handling",
+            "Social media marketing",
+            "Internal design and visual content production"
+        ]
+    },
+    "footer": "Professional profile intended for recruiters and employment opportunities.",
+    "buttons": {
+        "email": "Email",
+        "linkedin": "LinkedIn",
+        "instagram": "Instagram",
+        "cv": "CV (PDF)",
+        "cvLink": "files/CVKAMILA - ENGLISH.pdf"
+    }
+}
