@@ -50,6 +50,6 @@
         "linkedin": "LinkedIn",
         "instagram": "Instagram",
         "cv": "Currículo em PDF",
-        "cvLink": "files/CVKAMILA - PT.pdf"
+        "cvLink": "../files/CVKAMILA - PT.pdf"
     }
 }
