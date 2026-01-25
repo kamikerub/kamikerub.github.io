@@ -1,12 +1,11 @@
 {
     "title": "Kamila Mesquita",
     "subtitle": "Customer Service · Photography · Marketing",
-    "about": "Multifaceted professional with strong experience in customer service, childcare, hospitality, professional photography, and marketing. Purpose-driven, empathetic, and skilled in conflict mediation, adopting a human-centred, welcoming, and service-oriented approach.",
+    "about": "Versatile professional with solid experience in customer service, hospitality, professional photography, and marketing. Empathetic and service-oriented, with strong communication skills and experience in conflict mediation. Focused on service quality, organisation, and creating positive customer experiences.",
     "audioTitle": "Audio introduction",
+    "audioFile": "../audio/kami-en.mp3",
     "info": {
         "title": "Information",
-        "nationalityLabel": "Nationality:",
-        "nationalityValue": "Brazilian",
         "locationLabel": "Location:",
         "locationValue": "Porto, Portugal",
         "emailLabel": "Email:",
@@ -19,29 +18,48 @@
         "pt": "Portuguese — Native",
         "en": "English — Intermediate (B2)"
     },
+    "skills": {
+        "title": "Education & Training",
+        "journalismTitle": "Journalism & Communication - PUC",
+        "journalismPeriod": "2016 — 2019",
+        "journalismItems": [
+            "Bachelor's degree in Journalism (coursework)",
+            "Pontifícia Universidade Católica de Goiás - Brazil",
+            "Relevant coursework: communication, interviews, ethics, content production"
+        ],
+        "makeupTitle": "Makeup Technical Course - SENAC",
+        "makeupPeriod": "2016",
+        "makeupItems": [
+            "National Service for Commercial Learning – Brazil",
+            "Focus on professional makeup, customer care, hygiene standards, and aesthetics"
+        ]
+    },
     "experience": {
         "title": "Professional Experience",
         "photoTitle": "Freelance Photographer & Visual Content Specialist",
-        "photoPeriod": "Brazil & United Kingdom · 2017 — Present",
+        "photoPeriod": "Self-employed | Brazil & United Kingdom · 2017 — Present",
         "photoItems": [
-            "Weddings, brand campaigns, and editorial projects",
-            "Event coverage and premieres",
-            "Advanced image post-production and retouching (Adobe Photoshop)",
-            "Support in creative direction and casting"
+            "Professional freelance photographer working across weddings, brand campaigns, influencer marketing, and editorial projects",
+            "Covered premieres, collaborating with brands, creatives, and production teams",
+            "Advanced high-end post-production and retouching using Adobe Photoshop",
+            "Experience in model casting and talent selection for brand campaigns",
+            "Assisted with creative direction for music video productions"
         ],
         "childTitle": "Childcare Support",
-        "childPeriod": "United Kingdom · 2022 — 2025",
+        "childPeriod": "Family Support / Babysitting (United Kingdom) · 2022 — 2025",
         "childItems": [
-            "Support to families in daily routines",
-            "Emotional support and recreational activities",
-            "Human-centred and child-focused approach"
+            "Supported families between freelance projects, ensuring daily routines and activities",
+            "Assisted with recreational activities and emotional support, using a child-centred approach",
+            "References available upon request"
         ],
         "serviceTitle": "Customer Service Assistant",
-        "servicePeriod": "Parada da Costela Restaurant — Brazil · 2022",
+        "servicePeriod": "Parada da Costela Restaurant (Brazil) · 2022",
         "serviceItems": [
-            "Customer service and cash handling",
-            "Social media marketing",
-            "Internal design and visual content production"
+            "Served 100+ customers/day in daily operations",
+            "Supported customer service and cashier operations",
+            "Worked in a fast-paced hospitality environment with direct customer interaction",
+            "Supported content creation and communication for social media",
+            "In-house design (logo, promotional materials, banners, flyers, and photography)"
         ]
     },
     "footer": "Professional profile intended for recruiters and employment opportunities.",

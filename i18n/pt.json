@@ -1,12 +1,11 @@
 {
     "title": "Kamila Mesquita",
     "subtitle": "Atendimento ao Cliente · Fotografia · Marketing",
-    "about": "Profissional multifacetada, com forte experiência em atendimento ao cliente, cuidados infantis, hospitalidade, fotografia profissional e marketing. Orientada por propósito, empática e com competências em mediação de conflitos, adotando uma abordagem humana, acolhedora e centrada no serviço.",
+    "about": "Profissional versátil, com experiência sólida em atendimento ao cliente, hotelaria, fotografia profissional e marketing. Empática e orientada para o serviço, com forte capacidade de comunicação e mediação de conflitos. Focada na qualidade do atendimento, na organização e na criação de experiências positivas para o cliente.",
     "audioTitle": "Apresentação em áudio",
+    "audioFile": "../audio/kami-pt.mp3",
     "info": {
         "title": "Informações",
-        "nationalityLabel": "Nacionalidade:",
-        "nationalityValue": "Brasileira",
         "locationLabel": "Localização:",
         "locationValue": "Porto, Portugal",
         "emailLabel": "Email:",
@@ -19,29 +18,48 @@
         "pt": "Português — Língua materna",
         "en": "Inglês — Intermédio (B2)"
     },
+    "skills": {
+        "title": "Competências",
+        "journalismTitle": "Jornalismo & Comunicação - PUC",
+        "journalismPeriod": "2016 — 2019",
+        "journalismItems": [
+            "Licenciatura em Jornalismo (frequência universitária)",
+            "Pontifícia Universidade Católica de Goiás – Brasil",
+            "Unidades curriculares relevantes: comunicação, entrevistas, ética, produção de conteúdos"
+        ],
+        "makeupTitle": "Curso Técnico de Maquilhagem - SENAC",
+        "makeupPeriod": "2016",
+        "makeupItems": [
+            "Serviço Nacional de Aprendizagem Comercial – Brasil",
+            "Foco em maquilhagem profissional, atendimento ao cliente, normas de higiene e estética"
+        ]
+    },
     "experience": {
         "title": "Experiência Profissional",
         "photoTitle": "Fotógrafa Freelancer & Especialista em Conteúdos Visuais",
-        "photoPeriod": "Brasil & Reino Unido · 2017 — Presente",
+        "photoPeriod": "2017 - Presente",
         "photoItems": [
-            "Casamentos, campanhas de marcas e projetos editoriais",
-            "Cobertura de eventos e estreias",
-            "Pós-produção e retoque avançado (Adobe Photoshop)",
-            "Apoio à direção criativa e casting"
+            "A atuar em casamentos, campanhas de marca, marketing de influência e projetos editoriais.",
+            "Cobertura de estreias e eventos, em colaboração com marcas, criativos e equipas de produção.",
+            "Pós-produção e retoque avançado em Adobe Photoshop.",
+            "Apoio em casting e seleção de talentos para campanhas publicitárias.",
+            "Apoio à direção criativa em produções de vídeo (ex.: videoclipes)."
         ],
-        "childTitle": "Apoio em Cuidados Infantis",
-        "childPeriod": "Reino Unido · 2022 — 2025",
+        "childTitle": "Apoio Familiar / Babysitting (Reino Unido)",
+        "childPeriod": "2022 — 2025",
         "childItems": [
-            "Apoio a famílias em rotinas diárias",
-            "Acompanhamento emocional e atividades recreativas",
-            "Abordagem humana e centrada na criança"
+            "Apoio a famílias em rotinas diárias.",
+            "Acompanhamento emocional e atividades recreativas.",
+            "Abordagem humana e centrada na criança."
         ],
         "serviceTitle": "Assistente de Atendimento ao Cliente",
-        "servicePeriod": "Restaurante Parada da Costela — Brasil · 2022",
+        "servicePeriod": "Restaurante Parada da Costela (Brasil) · 2022",
         "serviceItems": [
-            "Atendimento ao cliente e operações de caixa",
-            "Marketing em redes sociais",
-            "Design interno e produção visual"
+            "Operação diária com mais de 100 clientes/dia.",
+            "Apoio ao atendimento ao cliente e operações de caixa.",
+            "Trabalho em ambiente de restauração dinâmico, com contacto direto com o público.",
+            "Apoio na criação de conteúdos e comunicação nas redes sociais",
+            "Design interno (logótipo, materiais promocionais, banners, flyers e fotografia)"
         ]
     },
     "footer": "Perfil profissional destinado a recrutadores e oportunidades de trabalho.",
